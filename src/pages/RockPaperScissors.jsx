@@ -9,11 +9,11 @@ import Ballpit from '../components/reactbits/Ballpit';
 const CHOICES = ['Rock', 'Paper', 'Scissors'];
 
 // Markov Chain for AI Prediction
-const markovChain = {
+const markovChainRef = useRef({
   Rock: { Rock: 1, Paper: 1, Scissors: 1 },
   Paper: { Rock: 1, Paper: 1, Scissors: 1 },
-  Scissors: { Rock: 1, Paper: 1, Scissors: 1 }
-};
+  Scissors: { Rock: 1, Paper: 1, Scissors: 1 },
+});
 
 export default function RockPaperScissors() {
   const [playerChoice, setPlayerChoice] = useState(null);
