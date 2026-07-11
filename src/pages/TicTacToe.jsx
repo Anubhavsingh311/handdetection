@@ -81,7 +81,7 @@ export default function TicTacToe() {
         ctx.beginPath();
         // Here we draw on unmirrored canvas, so we use original x, not 1-x.
         // Wait, if we use 1-x to calculate regions, and the canvas is mirrored, we should draw at original x.
-        ctx.arc(indexTip.x * webcamCanvas.width, y * webcamCanvas.height, 12, 0, 2 * Math.PI);
+        ctx.arc((1 - indexTip.x) * webcamCanvas.width, y * webcamCanvas.height, 12, 0, 2 * Math.PI);
         ctx.fillStyle = '#3b82f6';
         ctx.fill();
         ctx.strokeStyle = '#fff';
