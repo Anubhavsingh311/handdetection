@@ -39,7 +39,7 @@ export default function RockPaperScissors() {
     }
 
     // Hard Mode: Predict next move based on markov chain
-    const transitions = markovChain[lastChoice];
+    const transitions = markovChainRef.current[lastChoice];
     const total = transitions.Rock + transitions.Paper + transitions.Scissors;
     const r = Math.random() * total;
 
@@ -94,6 +94,11 @@ export default function RockPaperScissors() {
   };
 
   const resetMatch = () => {
+    markovChainRef.current = {
+    Rock: { Rock: 1, Paper: 1, Scissors: 1 },
+    Paper: { Rock: 1, Paper: 1, Scissors: 1 },
+    Scissors: { Rock: 1, Paper: 1, Scissors: 1 },
+  };
     setPlayerChoice(null);
     setAiChoice(null);
     setResult('');
@@ -131,7 +136,7 @@ export default function RockPaperScissors() {
 
           // Update Markov Chain
           if (lastPlayerChoiceRef.current) {
-            markovChain[lastPlayerChoiceRef.current][detectedChoice]++;
+            markovChainRef.current[lastPlayerChoiceRef.current][detectedChoice]++;
           }
           lastPlayerChoiceRef.current = detectedChoice;
 
