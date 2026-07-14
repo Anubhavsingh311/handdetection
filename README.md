@@ -49,4 +49,4 @@ All AI processing happens locally in your browser using MediaPipe. Your camera f
 
 ---
 
-Designed and Developed by Priyanka Priyadarshinee.
+Designed and Developed by Priyanka Priyadarshinee and Anubhav Singh.
